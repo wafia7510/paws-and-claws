@@ -15,12 +15,48 @@
 </head>
 
 <body>
+    <h1>Paws and Claws</h1>
+    <!--instructions-->
+    <div id="instructions">
+        <h2>Instructions</h2>
+        <p>Help the cat avoid the dogs while collecting points. Here's how to play:</p>
+        <ol>
+            <li>Click the "Start Game" button to begin.</li>
+            <li>Cat and dog will randomly appear in the hole.</li>
+            <li>Click on the cat to score points. Avoid clicking on the dog, or you'll lose health.</li>
+            <li>The game gets harder with each level as the speed increases.</li>
+            <li>Survive all levels and score the highest points possible!</li>
+        </ol>
+    </div>
+    <!--game-->
+    <div class="game">
+        <!--score board-->
+        <div class="score-board">
+            <div class="board">Score:<span id="score"></span></div>
+            <div class="board">Health:<span id="health"></span></div>
+            <div class="board">level:<span id="level"></span></div>
+        </div>
+        <!--Play Ground-->
+        <div class="grid">
+            <div class="holes" id="hole1">1</div>
+            <div class="holes" id="hole2">2</div>
+            <div class="holes" id="hole3">3</div>
+            <div class="holes" id="hole4">4</div>
+            <div class="holes" id="hole5">5</div>
+            <div class="holes" id="hole6">6</div>
+            <div class="holes" id="hole7">7</div>
+            <div class="holes" id="hole8">8</div>
+            <div class="holes" id="hole9">9</div>
+        </div>
+        <!--Button display-->
+        <button id="startBtn">Start Game</button>
+        <button id="restartBtn" style="display: none;">Restart Game</button>
 
-    Hello world
+    </div>
 
 
-    <!--javascript file link-->
-    <script src="assets/js/script.js"></script>
+<!--javascript file link-->
+<script src="assets/js/script.js"></script>
 </body>
 
 </html>
