@@ -15,49 +15,57 @@
 </head>
 
 <body>
-  <div id="main">
-    <h1>Paws and Claws</h1>
-    <!--instructions-->
-    <div id="instructions">
-        <h2>Instructions</h2>
-        <p>Help the cat avoid the dogs while collecting points. Here's how to play:</p>
-        <ol>
-            <li>Click the "Start Game" button to begin.</li>
-            <li>Cat and dog will randomly appear in the hole.</li>
-            <li>Click on the cat to score points. Avoid clicking on the dog, or you'll lose health.</li>
-            <li>The game gets harder with each level as the speed increases.</li>
-            <li>Survive all levels and score the highest points possible!</li>
-        </ol>
-    </div>
-    <!--game-->
-    <div class="game">
-        <!--score board-->
-        <div class="score-board">
-            <div class="board">Score:<span id="score"></span></div>
-            <div class="board">Health:<span id="health"></span></div>
-            <div class="board">level:<span id="level"></span></div>
+    <div id="main">
+        <h1>Paws and Claws</h1>
+        <!--instructions-->
+        <div id="instructions">
+            <h2>Instructions</h2>
+            <p>Help the cat avoid the dogs while collecting points. Here's how to play:</p>
+            <ol>
+                <li>Click the "Start Game" button to begin.</li>
+                <li>Cat and dog will randomly appear in the hole.</li>
+                <li>Click on the cat to score points. Avoid clicking on the dog, or you'll lose health.</li>
+                <li>The game gets harder with each level as the speed increases.</li>
+                <li>Survive all levels and score the highest points possible!</li>
+            </ol>
         </div>
-        <!--Play Ground-->
-        <div class="grid">
-            <div class="holes" id="hole1"></div>
-            <div class="holes" id="hole2"></div>
-            <div class="holes" id="hole3"></div>
-            <div class="holes" id="hole4"></div>
-            <div class="holes" id="hole5"></div>
-            <div class="holes" id="hole6"></div>
-            <div class="holes" id="hole7"></div>
-            <div class="holes" id="hole8"></div>
-            <div class="holes" id="hole9"></div>
+        <!--game-->
+        <div class="game">
+            <!--score board-->
+            <div class="score-board">
+                <div class="board">Score:<span id="score"></span></div>
+                <div class="board">Health:<span id="health"></span></div>
+                <div class="board">level:<span id="level"></span></div>
+            </div>
+            <!--Play Ground-->
+            <div class="grid">
+                <div class="holes" id="hole1"></div>
+                <div class="holes" id="hole2"></div>
+                <div class="holes" id="hole3"></div>
+                <div class="holes" id="hole4"></div>
+                <div class="holes" id="hole5"></div>
+                <div class="holes" id="hole6"></div>
+                <div class="holes" id="hole7"></div>
+                <div class="holes" id="hole8"></div>
+                <div class="holes" id="hole9"></div>
+            </div>
+            <!--Button display-->
+            <div class="button-placer">
+            <button id="startBtn">Start</button>
+            <button id="restartBtn">Restart</button>
+            <!-- Sound Toggle Button -->
+            <button id="soundToggleButton"><i class="fa-solid fa-volume-high"></i></button>
+             </div>
+            <div id="gameOverScreen" style="display:none;">Game Over</div>
+            <div id="WinnerScreen" style="display:none;"></div>
+
+
         </div>
-        <!--Button display-->
-        <button id="startBtn">Start Game</button>
-        <button id="restartBtn">Restart Game</button>
 
     </div>
-
-</div>
-<!--javascript file link-->
-<script src="assets/js/script.js"></script>
+    <!--javascript file link-->
+    <script src="assets/js/script.js"></script>
+    <script src="https://kit.fontawesome.com/e16b95325d.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
