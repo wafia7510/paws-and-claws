@@ -10,6 +10,7 @@ body {
     width: 100%;
     flex-direction: column;
     align-items: center;
+    min-height: 100vh;
 
 }
 
@@ -28,7 +29,7 @@ body {
 h1 {
     font-size: 5vw;
     font-family: Arial, Helvetica, sans-serif;
-    margin-top: 2rem;
+    margin-top: 10%;
     padding: 3%;
     width: 90%;
     text-align: center;
@@ -57,7 +58,8 @@ li {
 #instructions>h2 {
     font-size: 3vw;
     margin: 5% 3% 1%;
-    font-weight: 600;
+    font-weight: 700;
+    text-decoration: underline;
 
 
 }
@@ -94,6 +96,7 @@ ol>li {
     align-items: center;
 
 }
+
 /*board styling*/
 .score-board {
     display: flex;
@@ -105,31 +108,36 @@ ol>li {
     font-weight: bolder;
     color: rgba(26, 35, 126, 1)
 }
-.grid{
+
+.grid {
     width: 100%;
     height: 30vh;
     background-color: rgb(238, 181, 75);
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    
-    
+
+
 }
+
 .holes {
     width: 23%;
     height: 20%;
-    margin: 4% 5% ;
+    margin: 4% 5%;
     background-color: black;
     position: relative;
     border-radius: 50%;
     cursor: pointer;
 }
-.cat, .dog{
+
+.cat,
+.dog {
     width: 100%;
     height: 100%;
     background-size: cover;
     display: none;
 }
+
 .cat {
     background-image: url("../images/cute-cat.jpg");
 }
@@ -137,33 +145,142 @@ ol>li {
 .dog {
     background-image: url('../images/cute-dog.jpg');
 }
-.button-placer{
+
+.button-placer {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-around;
     padding: 0.5rem;
 }
-#startBtn,#restartBtn{
-    
+
+#startBtn,
+#restartBtn {
+
     width: 40%;
     padding: 1%;
-    background-color:#cf683b;
+    background-color: #cf683b;
     border-style: none;
     font-weight: bold;
     color: #fdf5e6;
 }
-#startBtn{
+
+#startBtn {
     display: inline;
 }
-#restartBtn{
+
+#restartBtn {
     display: none;
 }
-#soundToggleButton{
-    background-color:#cf683b; 
+
+#soundToggleButton {
+    background-color: #cf683b;
     color: #fdf5e6;
     border-style: none;
     width: 10%;
     padding: 1%;
+
+}
+
+@media screen and (min-width:375px) {
+    #main {
+
+        height: 90vh;
+
+    }
+
+    /* game styling*/
+    .game {
+
+        height: 48%;
+    }
+
+    /*board styling*/
+    .score-board {
+        padding: 3% 0;
+        height: 6vh;
+    }
+
+    .button-placer {
+        padding: 4% 0;
+    }
+}
+@media screen and (min-width:400px) and (max-width:460px){
+    h1 {
+        
+        margin-top: 7%;
+        
     
+    }
+    #main {
+
+        height: 110vh;
+
+    }
+    .game {
+
+        height: 52%;
+    }
+    
+    .grid {
+        
+        height: 50vh;
+        
+    
+    
+    }
+    
+    
+
+   
+}
+@media screen and (min-width:461px) and (max-width:520px){
+    #main {
+
+        height: 130vh;
+
+    }
+    h1 {
+        
+        margin-top: 7%;
+        
+    
+    }
+    .game {
+
+        height: 55%;
+    }
+    
+    .grid {
+        
+        height: 58vh;
+        
+    
+    
+    }
+}
+@media screen and (min-width:521px) and (max-width:600px){
+    #main {
+
+        height: 160vh;
+
+    }
+    h1 {
+        
+        margin-top: 7%;
+        
+    
+    }
+    .game {
+
+        height: 55%;
+    }
+    
+    .grid {
+        
+        height: 70vh;
+        
+    
+    
+    }
 }
