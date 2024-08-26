@@ -10,7 +10,7 @@ body {
     width: 100%;
     flex-direction: column;
     align-items: center;
-    min-height: 100vh;
+    min-height: 120vh;
 
 }
 
@@ -368,7 +368,7 @@ ol>li {
     }
     #main {
 
-        min-height: 200vh;
+        height: 200vh;
 
     }
     h1 {
@@ -408,7 +408,7 @@ ol>li {
     }
     #main {
 
-        min-height: 200vh;
+        height: 240vh;
 
     }
     h1 {
@@ -419,7 +419,7 @@ ol>li {
     }
     .game {
 
-        height: 56%;
+        height: 49%;
     }
     
     .grid {
@@ -439,32 +439,35 @@ ol>li {
 }
 @media screen and (min-width:1200px){
     .game {
-        width: 90%;
-        height: fit-content;
-        background-color: oldlace;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        width: 51%;
+        height: 90vh;
+        float: left;
+        margin: -48.4% 0% 0% 48%;
+        
     
     }
     #main {
-        background-color: #85d5d6c4;
         display: block;
-        margin: 10% auto;
-        width: 90%;
-        height: fit-content;
-        
-        
-    
-    
+        margin: -4% 2% 3% 1%;
+        width: 98%;
+        height: 111vh;
     }
     #instructions {
-        position:absolute ;
-        margin: 4% 20%;
-        width: 90%;
-        padding: 0.5%;
-        background-color: oldlace;
-    
+        
+        margin: 0.5% 0% 0% 1%;
+        width: 46%;
+        float: left;
+        padding: 1rem;
+        text-align: justify;
+   
+    }
+    h1 {
+        width: 98%;
+        margin-top: 5%;
+        font-size: 3vw;
+        padding: 1%;
+        margin-left: 1%;
+        
     
     }
 }
