@@ -34,7 +34,7 @@ levelDisplay.textContent=level;
 healthDisplay.textContent=health;
 startBtn.addEventListener("click",function(){
     gameInterval = setInterval(startGame, interval_speed);
-})
+});
 // StartGame Method
 function startGame() {
 
@@ -136,4 +136,47 @@ function displayImages() {
         alert(error)
     }
 
+}
+// Function to handle the click event when the cat image is clicked
+function whackCat() {
+    incrementScore();
+    playSoundEffect();
+
+}
+
+// Function to handle the click event when the dog image is clicked
+function whackDog() {
+    weakeningHealth();
+    playSoundEffect();
+}
+function incrementScore() {
+    score++;
+    scoreDisplay.textContent = score;
+
+    if (score <= 10) {
+        level = no_of_level[0];
+        levelDisplay.textContent = level;
+        interval_speed = 3000;
+        displayTime = 2500;
+    } else if (score > 10 && score <= 20) {
+        level = no_of_level[1];
+        levelDisplay.textContent = level;
+        interval_speed = 2000;
+        displayTime = 1500;
+    } else if (score > 20 && score <= 30) {
+        level = no_of_level[2];
+        levelDisplay.textContent = level;
+        interval_speed = 1000;
+        displayTime = 800;
+    } else {
+        showWinnercreen();
+        clearInterval(gameInterval);
+        clearTimeout(displayTimeout);
+        endGame();
+        return;
+    }
+
+    // Reset the interval to match the current level speed
+    clearInterval(gameInterval);
+    gameInterval = setInterval(startGame, interval_speed);
 }
