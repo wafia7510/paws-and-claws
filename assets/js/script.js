@@ -38,8 +38,8 @@ startBtn.addEventListener("click",function(){
 // StartGame Method
 function startGame() {
 
-    stBtn.style.display = "none";
-    restBtn.style.display = "inline-block";
+    startBtn.style.display = "none";
+    restartBtn.style.display = "inline-block";
 
     // Clear all holes before starting the next iteration
     clearHoles();
@@ -77,4 +77,63 @@ function clearHoles() {
     for (let i = 0; i < holes.length; i++) {
         holes[i].innerHTML = '';
     }
+}
+function displayImages() {
+    clearTimeout(displayTimeout)
+    try {
+        let generator1 = Math.floor(Math.random() * 9) + 1;
+        let generator2;
+        do {
+            generator2 = Math.floor(Math.random() * 9) + 1;
+        } while (generator2 === generator1);
+
+        // Place the first image for dog
+        const hole_selector1 = document.getElementById(`hole${generator1}`);
+        if (!hole_selector1) {
+            throw new Error(`Hole with ID 'hole${generator1}' not found.`);
+        }
+
+        else {
+            const img1 = document.createElement("img");
+            img1.src = "assets/images/cute-dog.jpg";
+            img1.alt = "Dog image";
+            img1.style.width = "100px";
+            img1.style.height = "100px";
+            img1.style.borderRadius = "50%";
+
+            // Attach the whackDog function to the click event
+            img1.addEventListener("click", whackDog);
+
+            hole_selector1.appendChild(img1);
+            displayTimeout = setTimeout(function () {
+                hole_selector1.innerHTML = '';
+            }, displayTime);
+        }
+
+        // Place the second image for cat
+        const hole_selector2 = document.getElementById(`hole${generator2}`);
+        if (!hole_selector2) {
+            throw new Error(`Hole with ID 'hole${generator2}' not found.`);
+        }
+        else {
+            const img2 = document.createElement("img");
+            img2.src = "assets/images/cute-cat.jpg";
+            img2.alt = "Cat image";
+            img2.style.width = "100px";
+            img2.style.height = "100px";
+            img2.style.borderRadius = "50%";
+
+            // Attach the whackCat function to the click event
+            img2.addEventListener("click", whackCat);
+
+            hole_selector2.appendChild(img2);
+            displayTimeout = setTimeout(function () {
+                hole_selector2.innerHTML = '';
+            }, displayTime);
+        }
+
+    } catch (error) {
+        alert(error)
+    }
+
 }
