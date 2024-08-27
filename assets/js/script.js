@@ -180,3 +180,36 @@ function incrementScore() {
     clearInterval(gameInterval);
     gameInterval = setInterval(startGame, interval_speed);
 }
+function weakeningHealth() {
+    playSoundEffect();
+    health--;
+    if (health >= 1 && health <= 9) {
+        healthDisplay.textContent = health;
+    } else {
+        clearInterval(gameInterval);
+        clearTimeout(displayTimeout);
+        displayGameOver();
+        endGame();
+    }
+}
+function displayGameOver() {
+    const gameOverScreen = document.getElementById("gameOverScreen");
+    gameOverScreen.style.display = "flex";
+    setTimeout(function () {
+        gameOverScreen.style.display = "none";
+    }, 2000);
+}
+
+function endGame() {
+    clearHoles();
+    clearInterval(gameInterval);
+    clearTimeout(displayTimeout);
+    resartGame();
+}
+function showWinnercreen() {
+    winnerScreen.textContent = "You Won";
+    winnerScreen.style.display = "flex";
+    setTimeout(function () {
+        winnerScreen.style.display = "none";
+    }, 2000);
+}
