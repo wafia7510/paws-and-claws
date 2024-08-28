@@ -130,6 +130,18 @@ ol>li {
     border-radius: 50%;
     cursor: pointer;
 }
+.holes .cat, .holes .dog{
+    width : 50px;
+    height :30px;
+   
+    
+}
+.grid .holes .dog{
+    margin: 3px 3px 0;
+}
+.grid .holes .cat{
+    margin: 1px 4px 0;
+}
 
 .button-placer {
     width: 100%;
@@ -189,6 +201,18 @@ ol>li {
     .button-placer {
         padding: 4% 0;
     }
+    .holes .cat, .holes .dog{
+        width : 50px;
+        height :40px;
+       
+        
+    }
+    .grid .holes .dog{
+        margin: 0 4px 0;
+    }
+    .grid .holes .cat{
+        margin: -5px 6px 0;
+    }
 }
 @media screen and (min-width:400px) and (max-width:460px){
     h1 {
@@ -210,9 +234,19 @@ ol>li {
     .grid {
         
         height: 50vh;
+  
+    }
+    .holes .cat, .holes .dog{
+        width : 60px;
+        height :50px;
+       
         
-    
-    
+    }
+    .grid .holes .dog{
+        margin: 0 4px 0;
+    }
+    .grid .holes .cat{
+        margin: 0 4.6px 0;
     }
     
     
@@ -243,6 +277,18 @@ ol>li {
     
     
     }
+    .holes .cat, .holes .dog{
+        width : 60px;
+        height :50px;
+       
+        
+    }
+    .grid .holes .dog{
+        margin: 0 4px 0;
+    }
+    .grid .holes .cat{
+        margin: 0 4.6px 0;
+    }
 }
 @media screen and (min-width:521px) and (max-width:640px){
     .score-board {
@@ -271,6 +317,18 @@ ol>li {
         
     
     
+    }
+    .holes .cat, .holes .dog{
+        width : 80px;
+        height :60px;
+       
+        
+    }
+    .grid .holes .dog{
+        margin: 10px 4px 0;
+    }
+    .grid .holes .cat{
+        margin: 10px 4.6px 0;
     }
 }
 @media screen and (min-width:641px) and (max-width:780px){
@@ -301,6 +359,18 @@ ol>li {
     
     
     }
+    .holes .cat, .holes .dog{
+        width : 90px;
+        height :70px;
+       
+        
+    }
+    .grid .holes .dog{
+        margin: 10px 5px 0;
+    }
+    .grid .holes .cat{
+        margin: 10px 8px 0;
+    }
 }
 @media screen and (min-width:781px) and (max-width:900px){
      .score-board {
@@ -329,16 +399,25 @@ ol>li {
     
     .grid {
         
-        height: 80vh;
-        
-    
-    
+        height: 80vh; 
     }
 #startBtn,
 #restartBtn {
 
     font-size: 1.5rem;
 
+}
+.holes .cat, .holes .dog{
+    width : 100px;
+    height :80px;
+   
+    
+}
+.grid .holes .dog{
+    margin: 11px 7px 0;
+}
+.grid .holes .cat{
+    margin: 11px 12px 0;
 }
 
 }
@@ -380,6 +459,18 @@ ol>li {
     font-size: 1.5rem;
 
 }
+.holes .cat, .holes .dog{
+    width : 110px;
+    height :90px;
+   
+    
+}
+.grid .holes .dog{
+    margin: 15px 10px 0;
+}
+.grid .holes .cat{
+    margin: 15px 20px 0;
+}
 
 }
 @media screen and (min-width:1100px){
@@ -419,6 +510,18 @@ ol>li {
 
     font-size: 1.5rem;
 
+}
+.holes .cat, .holes .dog{
+    width : 120px;
+    height :100px;
+   
+    
+}
+.grid .holes .dog{
+    margin: 30px 20px 0;
+}
+.grid .holes .cat{
+    margin: 30px 30px 0;
 }
 
 }
@@ -522,11 +625,11 @@ ol>li {
        
         
     }
-    .holes .dog{
+    .grid .holes .dog{
         margin: 2px 10px 0;
     }
-    .holes img.cat{
-        margin: -10px 20px 0;
+    .grid .holes .cat{
+        margin: -10px 20px  0;
     }
 }
 #gameOverScreen{
@@ -571,16 +674,4 @@ ol>li {
     100% {
         opacity: 0;
     }
-}
-.cat,.dog{
-    width : 50px;
-    height :30px;
-   
-    
-}
-.dog{
-    margin: 3px 7px 0;
-}
-.cat{
-    margin: 30px 40px 0;
 }
