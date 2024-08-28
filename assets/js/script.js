@@ -40,16 +40,16 @@ healthDisplay.textContent = health;
 
 function toggleSound() {
     soundOn = !soundOn; // Toggle the sound state
-    soundToggleIcon.classList.contains("fa-volume-high")
-        ? soundToggleIcon.classList.replace("fa-volume-high", "fa-volume-mute")
-        : soundToggleIcon.classList.replace("fa-volume-mute", "fa-volume-high");
+    soundToggleIcon.classList.contains("fa-volume-mute")
+        ? soundToggleIcon.classList.replace("fa-volume-mute", "fa-volume-high")
+        : soundToggleIcon.classList.replace("fa-volume-high", "fa-volume-mute");
     
     // Play or pause the sound based on the toggle state
-    // if (soundOn) {
-    //     gameSound.play();
-    // } else {
-    //     gameSound.pause();
-    // }
+    if (soundOn) {
+         gameSound.play();
+     } else {
+          gameSound.pause();
+       }
 }
 // Add event listener for the button to toggle sound
 soundToggleButton.addEventListener("click", toggleSound);
@@ -164,14 +164,20 @@ function displayImages() {
 }
 // Function to handle the click event when the cat image is clicked
 function whackCat() {
+    let cat=document.querySelector(".cat");
+    cat.classList.add("disable");
     incrementScore();
+    playSoundEffect();
     
 
 }
 
 // Function to handle the click event when the dog image is clicked
 function whackDog() {
+    let dog=document.querySelector(".dog"); 
+    dog.classList.add("disable");
     weakeningHealth();
+    playSoundEffect();
    
 }
 
