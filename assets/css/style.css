@@ -334,7 +334,7 @@ ol>li {
     
     
     }
-    #startBtn,
+#startBtn,
 #restartBtn {
 
     font-size: 1.5rem;
@@ -422,6 +422,7 @@ ol>li {
 }
 
 }
+
 @media screen and (min-width:1200px){
     .game {
         width: 47%;
@@ -515,4 +516,71 @@ ol>li {
         font-size: 1.3rem;
     
     }
+    .holes .cat, .holes .dog{
+        width : 100px;
+        height :82px;
+       
+        
+    }
+    .holes .dog{
+        margin: 2px 10px 0;
+    }
+    .holes img.cat{
+        margin: -10px 20px 0;
+    }
+}
+#gameOverScreen{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    display: none; /* Initially hidden */
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 3em;
+    z-index: 1000; /* Make sure it covers everything */
+}
+#WinnerScreen{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    display: none; /* Initially hidden */
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 3em;
+    z-index: 1000; /* Make sure it covers everything */ 
+    animation: fadeInOut 2s; /* Fade-in and fade-out animation */ 
+}
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+.cat,.dog{
+    width : 50px;
+    height :30px;
+   
+    
+}
+.dog{
+    margin: 3px 7px 0;
+}
+.cat{
+    margin: 30px 40px 0;
 }

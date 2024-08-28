@@ -5,19 +5,20 @@ let interval_speed = 3000;
 let displayTime = 2500;
 let displayTimeout;
 let max_health = 9;
-health=max_health;
+health = max_health;
 let no_of_level = ["Slow", "Medium", "Fast"];
-let level =no_of_level[0];
+let level = no_of_level[0];
 // Flags to track if the level screen has been shown
 let level1Shown = false;
 let level2Shown = false;
 let level3Shown = false;
-
+let soundOn=false;
 
 /** Elements dom id
  * for score , health , level ,start/restart buttons and holes
-*/
+ */
 const soundToggleButton = document.getElementById("soundToggleButton");
+const soundToggleIcon = document.getElementById("soundToggleIcon");
 const gameSound = document.getElementById("gameSound"); // Get the audio element
 const scoreDisplay = document.getElementById('score');
 const healthDisplay = document.getElementById('health');
@@ -26,15 +27,46 @@ const startBtn = document.getElementById('startBtn');
 const restartBtn = document.getElementById('restartBtn');
 const holes = document.getElementsByClassName("holes");
 const winnerScreen = document.getElementById("WinnerScreen");
-const gameOverScreen=document.getElementById("gameOverScreen");
+const gameOverScreen = document.getElementById("gameOverScreen");
 const soundBtn = document.getElementById("soundButton");
 const grid = document.getElementById("grid"); // Get the grid element
-scoreDisplay.textContent=score;
-levelDisplay.textContent=level;
-healthDisplay.textContent=health;
-startBtn.addEventListener("click",function(){
+scoreDisplay.textContent = score;
+levelDisplay.textContent = level;
+healthDisplay.textContent = health;
+
+    startBtn.addEventListener("click", function () {
     gameInterval = setInterval(startGame, interval_speed);
-});
+    });
+
+function toggleSound() {
+    soundOn = !soundOn; // Toggle the sound state
+    soundToggleIcon.classList.contains("fa-volume-high")
+        ? soundToggleIcon.classList.replace("fa-volume-high", "fa-volume-mute")
+        : soundToggleIcon.classList.replace("fa-volume-mute", "fa-volume-high");
+    
+    // Play or pause the sound based on the toggle state
+    // if (soundOn) {
+    //     gameSound.play();
+    // } else {
+    //     gameSound.pause();
+    // }
+}
+// Add event listener for the button to toggle sound
+soundToggleButton.addEventListener("click", toggleSound);
+
+// Example usage: play sound only if sound is enabled
+function playSoundEffect() {
+    if (soundOn) {
+        gameSound.currentTime = 0; // Reset to the start for each play
+        gameSound.play();
+    }
+}
+gameSound.onerror = function () {
+    console.error("Audio file failed to load.");
+    // Optionally provide a fallback sound or disable the sound toggle button
+    soundToggleButton.disabled = true;
+};
+restartBtn.addEventListener("click",resartGame);
 // StartGame Method
 function startGame() {
 
@@ -64,13 +96,16 @@ function startGame() {
         displayImages();
     }
 }
+
 function showLevelScreen(levelText, callback) {
     winnerScreen.textContent = "Level:" + levelText;
     winnerScreen.style.display = "flex";
+    
     setTimeout(function () {
         winnerScreen.style.display = "none";
         callback(); // Resume the game
     }, 1500);
+    
 }
 
 function clearHoles() {
@@ -78,8 +113,9 @@ function clearHoles() {
         holes[i].innerHTML = '';
     }
 }
+
 function displayImages() {
-    clearTimeout(displayTimeout)
+    clearTimeout(displayTimeout);
     try {
         let generator1 = Math.floor(Math.random() * 9) + 1;
         let generator2;
@@ -87,68 +123,58 @@ function displayImages() {
             generator2 = Math.floor(Math.random() * 9) + 1;
         } while (generator2 === generator1);
 
-        // Place the first image for dog
+        // Path logging
+        console.log("assets/images/cute-dog.png");
+
         const hole_selector1 = document.getElementById(`hole${generator1}`);
         if (!hole_selector1) {
             throw new Error(`Hole with ID 'hole${generator1}' not found.`);
-        }
-
-        else {
+        } else {
             const img1 = document.createElement("img");
-            img1.src = "assets/images/cute-dog.jpg";
+            img1.src = "assets/images/cute-dog-head.png";
             img1.alt = "Dog image";
-            img1.style.width = "100px";
-            img1.style.height = "100px";
-            img1.style.borderRadius = "50%";
-
-            // Attach the whackDog function to the click event
-            img1.addEventListener("click", whackDog);
-
+            img1.classList.add("dog");
             hole_selector1.appendChild(img1);
+            img1.addEventListener("click", whackDog);
             displayTimeout = setTimeout(function () {
                 hole_selector1.innerHTML = '';
             }, displayTime);
         }
 
-        // Place the second image for cat
+        
+
         const hole_selector2 = document.getElementById(`hole${generator2}`);
         if (!hole_selector2) {
             throw new Error(`Hole with ID 'hole${generator2}' not found.`);
-        }
-        else {
+        } else {
             const img2 = document.createElement("img");
-            img2.src = "assets/images/cute-cat.jpg";
+            img2.src = "assets/images/cute-cat-head.png";
             img2.alt = "Cat image";
-            img2.style.width = "100px";
-            img2.style.height = "100px";
-            img2.style.borderRadius = "50%";
-
-            // Attach the whackCat function to the click event
-            img2.addEventListener("click", whackCat);
-
+            img2.classList.add("cat");
             hole_selector2.appendChild(img2);
+            img2.addEventListener("click", whackCat);
             displayTimeout = setTimeout(function () {
                 hole_selector2.innerHTML = '';
             }, displayTime);
         }
 
     } catch (error) {
-        alert(error)
+        alert(error);
     }
-
 }
 // Function to handle the click event when the cat image is clicked
 function whackCat() {
     incrementScore();
-    playSoundEffect();
+    
 
 }
 
 // Function to handle the click event when the dog image is clicked
 function whackDog() {
     weakeningHealth();
-    playSoundEffect();
+   
 }
+
 function incrementScore() {
     score++;
     scoreDisplay.textContent = score;
@@ -163,13 +189,13 @@ function incrementScore() {
         levelDisplay.textContent = level;
         interval_speed = 2000;
         displayTime = 1500;
-    } else if (score > 20 && score <= 30) {
+    } else if (score > 20 && score <= 29) {
         level = no_of_level[2];
         levelDisplay.textContent = level;
         interval_speed = 1000;
         displayTime = 800;
     } else {
-        showWinnercreen();
+        showWinnerScreen();
         clearInterval(gameInterval);
         clearTimeout(displayTimeout);
         endGame();
@@ -180,6 +206,7 @@ function incrementScore() {
     clearInterval(gameInterval);
     gameInterval = setInterval(startGame, interval_speed);
 }
+
 function weakeningHealth() {
     playSoundEffect();
     health--;
@@ -192,6 +219,7 @@ function weakeningHealth() {
         endGame();
     }
 }
+
 function displayGameOver() {
     const gameOverScreen = document.getElementById("gameOverScreen");
     gameOverScreen.style.display = "flex";
@@ -206,10 +234,29 @@ function endGame() {
     clearTimeout(displayTimeout);
     resartGame();
 }
-function showWinnercreen() {
+
+function showWinnerScreen() {
     winnerScreen.textContent = "You Won";
     winnerScreen.style.display = "flex";
     setTimeout(function () {
         winnerScreen.style.display = "none";
     }, 2000);
+}
+
+function resartGame() {
+    startBtn.style.display = "inline-block";
+    restartBtn.style.display = "none";
+    levelDisplay.textContent = no_of_level[0];
+    health = max_health
+    healthDisplay.textContent = health;
+    score = 0;
+    scoreDisplay.textContent = score;
+    clearInterval(gameInterval);
+    clearTimeout(displayTimeout);
+    interval_speed = 3000;
+    displayTime = 2500;
+    // Reset level screen flags
+    level1Shown = false;
+    level2Shown = false;
+    level3Shown = false;
 }
