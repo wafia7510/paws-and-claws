@@ -54,7 +54,7 @@ function toggleSound() {
 // Add event listener for the button to toggle sound
 soundToggleButton.addEventListener("click", toggleSound);
 
-// Example usage: play sound only if sound is enabled
+//  play sound only if sound is enabled
 function playSoundEffect() {
     if (soundOn) {
         gameSound.currentTime = 0; // Reset to the start for each play
@@ -82,16 +82,19 @@ function startGame() {
             level1Shown = true;
             displayImages();
         });
-    } else if (score === 10 && !level2Shown) {
+        levelDisplay.textContent=no_of_level[0]
+    } else if (score === 11 && !level2Shown) {
         showLevelScreen(no_of_level[1], function () {
             level2Shown = true;
             displayImages();
         });
-    } else if (score === 20 && !level3Shown) {
+        levelDisplay.textContent=no_of_level[1];
+    } else if (score === 21 && !level3Shown) {
         showLevelScreen(no_of_level[2], function () {
             level3Shown = true;
             displayImages();
         });
+        levelDisplay.textContent=no_of_level[2];
     } else {
         displayImages();
     }
@@ -101,10 +104,12 @@ function showLevelScreen(levelText, callback) {
     winnerScreen.textContent = "Level:" + levelText;
     winnerScreen.style.display = "flex";
     
+    
     setTimeout(function () {
         winnerScreen.style.display = "none";
         callback(); // Resume the game
     }, 1500);
+
     
 }
 
@@ -250,6 +255,7 @@ function showWinnerScreen() {
 }
 
 function resartGame() {
+    clearHoles();
     startBtn.style.display = "inline-block";
     restartBtn.style.display = "none";
     levelDisplay.textContent = no_of_level[0];
