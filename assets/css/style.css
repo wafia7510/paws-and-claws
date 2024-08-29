@@ -843,7 +843,7 @@ ol>li {
         margin: -10px 20px  0;
     }
 }
-#gameOverScreen{
+#gameOverScreen , #WinnerScreen{
     position: fixed;
     top: 0;
     left: 0;
@@ -855,23 +855,9 @@ ol>li {
     align-items: center;
     color: white;
     font-size: 3em;
-    z-index: 1000; /* Make sure it covers everything */
+    z-index: 1000; /*  it covers everything */
 }
-#WinnerScreen{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
-    display: none; /* Initially hidden */
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 3em;
-    z-index: 1000; /* Make sure it covers everything */ 
-    animation: fadeInOut 2s; /* Fade-in and fade-out animation */ 
-}
+
 @keyframes fadeInOut {
     0% {
         opacity: 0;
