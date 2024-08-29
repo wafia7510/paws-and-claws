@@ -79,14 +79,14 @@ function startGame() {
             displayImages();
         });
 
-    } else if (score === 11 && !level2Shown) {
+    } else if (score === 31 && !level2Shown) {
         showLevelScreen(no_of_level[1], function () {
             level2Shown = true;
             console.log("showscreem")
             displayImages();
         });
 
-    } else if (score === 21 && !level3Shown) {
+    } else if (score === 61 && !level3Shown) {
         showLevelScreen(no_of_level[2], function () {
             level3Shown = true;
             displayImages();
@@ -187,17 +187,17 @@ function incrementScore() {
     score++;
     scoreDisplay.textContent = score;
 
-    if (score <= 10) {
+    if (score <= 30) {
         level = no_of_level[0];
         levelDisplay.textContent = level;
         interval_speed = 2000;
         displayTime = 2500;
-    } else if (score >= 11 && score <= 20) {
+    } else if (score >= 31 && score <= 60) {
         level = no_of_level[1];
         levelDisplay.textContent = level;
         interval_speed = 1500;
         displayTime = 1500;
-    } else if (score >= 21 && score <= 29) {
+    } else if (score >= 61 && score <= 89) {
         level = no_of_level[2];
         levelDisplay.textContent = level;
         interval_speed = 1000;
