@@ -29,7 +29,7 @@ const holes = document.getElementsByClassName("holes");
 const winnerScreen = document.getElementById("WinnerScreen");
 const gameOverScreen = document.getElementById("gameOverScreen");
 const soundBtn = document.getElementById("soundButton");
-const grid = document.getElementById("grid"); // Get the grid element
+
 scoreDisplay.textContent = score;
 levelDisplay.textContent = level;
 healthDisplay.textContent = health;
@@ -44,12 +44,6 @@ function toggleSound() {
         ? soundToggleIcon.classList.replace("fa-volume-mute", "fa-volume-high")
         : soundToggleIcon.classList.replace("fa-volume-high", "fa-volume-mute");
     
-    // Play or pause the sound based on the toggle state
-    if (soundOn) {
-         gameSound.play();
-     } else {
-          gameSound.pause();
-       }
 }
 // Add event listener for the button to toggle sound
 soundToggleButton.addEventListener("click", toggleSound);
@@ -59,6 +53,9 @@ function playSoundEffect() {
     if (soundOn) {
         gameSound.currentTime = 0; // Reset to the start for each play
         gameSound.play();
+    }
+    else{
+        gameSound.pause();
     }
 }
 gameSound.onerror = function () {
@@ -270,6 +267,10 @@ function resartGame() {
     clearTimeout(displayTimeout);
     interval_speed = 2000;
     displayTime = 2500;
+    soundOn=false;
+    soundToggleIcon.classList.contains("fa-volume-mute")
+        ? soundToggleIcon.classList.replace("fa-volume-mute", "fa-volume-high")
+        : soundToggleIcon.classList.replace("fa-volume-high", "fa-volume-mute");
     clearHoles();
     // Reset level screen flags
     level1Shown = false;
