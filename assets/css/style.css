@@ -23,6 +23,7 @@ body {
     width: 80%;
     height: 80vh;
     margin: 20% auto;
+    overflow: hidden;
 
 
 }
@@ -66,7 +67,7 @@ li {
 }
 
 #instructions>p {
-    font-size: 2vw;
+    font-size: 2.5vw;
     text-align: justify;
     margin: 3% 3% 0%;
     font-weight: 500;
@@ -75,7 +76,7 @@ li {
 }
 
 #instructions>ol {
-    font-size: 1.9vw;
+    font-size: 2vw;
     margin: 2% 3%;
     font-weight: 500;
 
@@ -107,7 +108,8 @@ ol>li {
 
 .board {
     font-weight: bolder;
-    color: rgba(26, 35, 126, 1)
+    color: rgba(26, 35, 126, 1);
+    font-size: 0.7em;
 }
 
 .grid {
@@ -201,6 +203,10 @@ ol>li {
     .button-placer {
         padding: 4% 0;
     }
+    .board {
+        
+        font-size: 0.9em;
+    }
     .holes .cat, .holes .dog{
         width : 50px;
         height :40px;
@@ -248,8 +254,23 @@ ol>li {
     .grid .holes .cat{
         margin: 0 4.6px 0;
     }
+   
+    #startBtn,
+    #restartBtn {
+    
+        width: 30%;
+        padding: 1%;
+        font-size: 1rem;
+    }
     
     
+    
+    #soundToggleButton {
+        width: 12%;
+        padding: 1%;
+        font-size: 1rem;
+    
+    }
 
    
 }
@@ -289,11 +310,31 @@ ol>li {
     .grid .holes .cat{
         margin: 0 4.6px 0;
     }
+    #startBtn,
+    #restartBtn {
+    
+        width: 30%;
+        padding: 2%;
+        font-size: 1.1rem;
+    }
+    
+    
+    
+    #soundToggleButton {
+        width: 12%;
+        padding: 2%;
+        font-size: 1.1rem;
+    
+    }
 }
 @media screen and (min-width:521px) and (max-width:640px){
     .score-board {
         padding: 6% 0;
         height: 10vh;
+    }
+    .board {
+        
+        font-size: 1.1em;
     }
     #main {
 
@@ -330,11 +371,31 @@ ol>li {
     .grid .holes .cat{
         margin: 10px 4.6px 0;
     }
+    #startBtn,
+    #restartBtn {
+    
+        width: 30%;
+        padding: 3%;
+        font-size: 1.2rem;
+    }
+    
+    
+    
+    #soundToggleButton {
+        width: 12%;
+        padding: 3%;
+        font-size: 1.2rem;
+    
+    }
 }
 @media screen and (min-width:641px) and (max-width:780px){
     .score-board {
         padding: 5% 0;
         height: 10vh;
+    }
+    .board {
+        
+        font-size: 1.2em;
     }
     #main {
 
@@ -371,6 +432,22 @@ ol>li {
     .grid .holes .cat{
         margin: 10px 8px 0;
     }
+    #startBtn,
+    #restartBtn {
+    
+        width: 25%;
+        padding: 3.2%;
+        font-size: 1.3rem;
+    }
+    
+    
+    
+    #soundToggleButton {
+        width: 12%;
+        padding: 3.2%;
+        font-size: 1.3rem;
+    
+    }
 }
 @media screen and (min-width:781px) and (max-width:900px){
      .score-board {
@@ -401,12 +478,22 @@ ol>li {
         
         height: 80vh; 
     }
-#startBtn,
-#restartBtn {
-
-    font-size: 1.5rem;
-
-}
+    #startBtn,
+    #restartBtn {
+    
+        width: 25%;
+        padding: 3.3%;
+        font-size: 1.4rem;
+    }
+    
+    
+    
+    #soundToggleButton {
+        width: 12%;
+        padding: 3.3%;
+        font-size: 1.4rem;
+    
+    }
 .holes .cat, .holes .dog{
     width : 100px;
     height :80px;
@@ -427,8 +514,8 @@ ol>li {
         height: 14vh;
     }
     .board {
-        font-weight: bolder;
-        font-size: 1.7rem;
+        
+        font-size: 1.8em;
     }
     #main {
 
@@ -454,11 +541,21 @@ ol>li {
     
     }
     #startBtn,
-#restartBtn {
-
-    font-size: 1.5rem;
-
-}
+    #restartBtn {
+    
+        width: 25%;
+        padding: 3.4%;
+        font-size: 1.5rem;
+    }
+    
+    
+    
+    #soundToggleButton {
+        width: 12%;
+        padding: 3.4%;
+        font-size: 1.5rem;
+    
+    }
 .holes .cat, .holes .dog{
     width : 110px;
     height :90px;
@@ -479,8 +576,8 @@ ol>li {
         height: 14vh;
     }
     .board {
-        font-weight: bolder;
-        font-size: 1.7rem;
+        
+        font-size: 2rem;
     }
     #main {
 
@@ -506,11 +603,21 @@ ol>li {
     
     }
     #startBtn,
-#restartBtn {
-
-    font-size: 1.5rem;
-
-}
+    #restartBtn {
+    
+        width: 25%;
+        padding: 3.4%;
+        font-size: 1.9rem;
+    }
+    
+    
+    
+    #soundToggleButton {
+        width: 12%;
+        padding: 3.4%;
+        font-size: 1.9rem;
+    
+    }
 .holes .cat, .holes .dog{
     width : 120px;
     height :100px;

@@ -1,7 +1,7 @@
 let score = 0;
 let health = 0;
 let gameInterval;
-let interval_speed = 3000;
+let interval_speed = 2000;
 let displayTime = 2500;
 let displayTimeout;
 let max_health = 9;
@@ -82,19 +82,20 @@ function startGame() {
             level1Shown = true;
             displayImages();
         });
-        levelDisplay.textContent=no_of_level[0]
+        
     } else if (score === 11 && !level2Shown) {
         showLevelScreen(no_of_level[1], function () {
             level2Shown = true;
+            console.log("showscreem")
             displayImages();
         });
-        levelDisplay.textContent=no_of_level[1];
+        
     } else if (score === 21 && !level3Shown) {
         showLevelScreen(no_of_level[2], function () {
             level3Shown = true;
             displayImages();
         });
-        levelDisplay.textContent=no_of_level[2];
+        
     } else {
         displayImages();
     }
@@ -121,6 +122,7 @@ function clearHoles() {
 
 function displayImages() {
     clearTimeout(displayTimeout);
+    clearHoles();
     try {
         let generator1 = Math.floor(Math.random() * 9) + 1;
         let generator2;
@@ -128,8 +130,7 @@ function displayImages() {
             generator2 = Math.floor(Math.random() * 9) + 1;
         } while (generator2 === generator1);
 
-        // Path logging
-        console.log("assets/images/cute-dog.png");
+        
 
         const hole_selector1 = document.getElementById(`hole${generator1}`);
         if (!hole_selector1) {
@@ -193,14 +194,15 @@ function incrementScore() {
     if (score <= 10) {
         level = no_of_level[0];
         levelDisplay.textContent = level;
-        interval_speed = 3000;
-        displayTime = 2500;
-    } else if (score > 10 && score <= 20) {
-        level = no_of_level[1];
-        levelDisplay.textContent = level;
         interval_speed = 2000;
+        displayTime = 2500;
+    } else if ( score >= 11 && score <= 20) {
+        level = no_of_level[1];
+        console.log("im inside 11");
+        levelDisplay.textContent = level;
+        interval_speed = 1500;
         displayTime = 1500;
-    } else if (score > 20 && score <= 29) {
+    } else if (score >= 21 && score <= 29) {
         level = no_of_level[2];
         levelDisplay.textContent = level;
         interval_speed = 1000;
@@ -214,6 +216,7 @@ function incrementScore() {
     }
 
     // Reset the interval to match the current level speed
+    clearHoles();
     clearInterval(gameInterval);
     gameInterval = setInterval(startGame, interval_speed);
 }
@@ -240,10 +243,10 @@ function displayGameOver() {
 }
 
 function endGame() {
-    clearHoles();
     clearInterval(gameInterval);
     clearTimeout(displayTimeout);
     resartGame();
+    clearHoles();
 }
 
 function showWinnerScreen() {
@@ -255,7 +258,7 @@ function showWinnerScreen() {
 }
 
 function resartGame() {
-    clearHoles();
+    
     startBtn.style.display = "inline-block";
     restartBtn.style.display = "none";
     levelDisplay.textContent = no_of_level[0];
@@ -265,8 +268,9 @@ function resartGame() {
     scoreDisplay.textContent = score;
     clearInterval(gameInterval);
     clearTimeout(displayTimeout);
-    interval_speed = 3000;
+    interval_speed = 2000;
     displayTime = 2500;
+    clearHoles();
     // Reset level screen flags
     level1Shown = false;
     level2Shown = false;
