@@ -12,7 +12,7 @@ let level = no_of_level[0];
 let level1Shown = false;
 let level2Shown = false;
 let level3Shown = false;
-let soundOn=false;
+let soundOn = false;
 
 /** Elements dom id
  * for score , health , level ,start/restart buttons and holes
@@ -34,16 +34,16 @@ scoreDisplay.textContent = score;
 levelDisplay.textContent = level;
 healthDisplay.textContent = health;
 
-    startBtn.addEventListener("click", function () {
+startBtn.addEventListener("click", function () {
     gameInterval = setInterval(startGame, interval_speed);
-    });
+});
 
 function toggleSound() {
     soundOn = !soundOn; // Toggle the sound state
-    soundToggleIcon.classList.contains("fa-volume-mute")
-        ? soundToggleIcon.classList.replace("fa-volume-mute", "fa-volume-high")
-        : soundToggleIcon.classList.replace("fa-volume-high", "fa-volume-mute");
-    
+    soundToggleIcon.classList.contains("fa-volume-mute") ?
+        soundToggleIcon.classList.replace("fa-volume-mute", "fa-volume-high") :
+        soundToggleIcon.classList.replace("fa-volume-high", "fa-volume-mute");
+
 }
 // Add event listener for the button to toggle sound
 soundToggleButton.addEventListener("click", toggleSound);
@@ -53,8 +53,7 @@ function playSoundEffect() {
     if (soundOn) {
         gameSound.currentTime = 0; // Reset to the start for each play
         gameSound.play();
-    }
-    else{
+    } else {
         gameSound.pause();
     }
 }
@@ -63,7 +62,7 @@ gameSound.onerror = function () {
     // Optionally provide a fallback sound or disable the sound toggle button
     soundToggleButton.disabled = true;
 };
-restartBtn.addEventListener("click",resartGame);
+restartBtn.addEventListener("click", resartGame);
 // StartGame Method
 function startGame() {
 
@@ -79,20 +78,20 @@ function startGame() {
             level1Shown = true;
             displayImages();
         });
-        
+
     } else if (score === 11 && !level2Shown) {
         showLevelScreen(no_of_level[1], function () {
             level2Shown = true;
             console.log("showscreem")
             displayImages();
         });
-        
+
     } else if (score === 21 && !level3Shown) {
         showLevelScreen(no_of_level[2], function () {
             level3Shown = true;
             displayImages();
         });
-        
+
     } else {
         displayImages();
     }
@@ -101,14 +100,14 @@ function startGame() {
 function showLevelScreen(levelText, callback) {
     winnerScreen.textContent = "Level:" + levelText;
     winnerScreen.style.display = "flex";
-    
-    
+
+
     setTimeout(function () {
         winnerScreen.style.display = "none";
         callback(); // Resume the game
     }, 1500);
 
-    
+
 }
 
 function clearHoles() {
@@ -127,7 +126,7 @@ function displayImages() {
             generator2 = Math.floor(Math.random() * 9) + 1;
         } while (generator2 === generator1);
 
-        
+
 
         const hole_selector1 = document.getElementById(`hole${generator1}`);
         if (!hole_selector1) {
@@ -144,7 +143,7 @@ function displayImages() {
             }, displayTime);
         }
 
-        
+
 
         const hole_selector2 = document.getElementById(`hole${generator2}`);
         if (!hole_selector2) {
@@ -167,21 +166,21 @@ function displayImages() {
 }
 // Function to handle the click event when the cat image is clicked
 function whackCat() {
-    let cat=document.querySelector(".cat");
+    let cat = document.querySelector(".cat");
     cat.classList.add("disable");
     incrementScore();
     playSoundEffect();
-    
+
 
 }
 
 // Function to handle the click event when the dog image is clicked
 function whackDog() {
-    let dog=document.querySelector(".dog"); 
+    let dog = document.querySelector(".dog");
     dog.classList.add("disable");
     weakeningHealth();
     playSoundEffect();
-   
+
 }
 
 function incrementScore() {
@@ -193,9 +192,8 @@ function incrementScore() {
         levelDisplay.textContent = level;
         interval_speed = 2000;
         displayTime = 2500;
-    } else if ( score >= 11 && score <= 20) {
+    } else if (score >= 11 && score <= 20) {
         level = no_of_level[1];
-        console.log("im inside 11");
         levelDisplay.textContent = level;
         interval_speed = 1500;
         displayTime = 1500;
@@ -255,7 +253,7 @@ function showWinnerScreen() {
 }
 
 function resartGame() {
-    
+
     startBtn.style.display = "inline-block";
     restartBtn.style.display = "none";
     levelDisplay.textContent = no_of_level[0];
@@ -267,10 +265,10 @@ function resartGame() {
     clearTimeout(displayTimeout);
     interval_speed = 2000;
     displayTime = 2500;
-    soundOn=false;
-    soundToggleIcon.classList.contains("fa-volume-mute")
-        ? soundToggleIcon.classList.replace("fa-volume-mute", "fa-volume-high")
-        : soundToggleIcon.classList.replace("fa-volume-high", "fa-volume-mute");
+    soundOn = false;
+    soundToggleIcon.classList.contains("fa-volume-mute") ?
+        soundToggleIcon.classList.replace("fa-volume-mute", "fa-volume-high") :
+        soundToggleIcon.classList.replace("fa-volume-high", "fa-volume-mute");
     clearHoles();
     // Reset level screen flags
     level1Shown = false;
