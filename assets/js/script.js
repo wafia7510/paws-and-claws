@@ -2,7 +2,7 @@ let score = 0;
 let health = 0;
 let gameInterval;
 let interval_speed = 2000;
-let displayTime = 2500;
+let displayTime = 1600;
 let displayTimeout;
 let max_health = 9;
 health = max_health;
@@ -191,12 +191,12 @@ function incrementScore() {
         level = no_of_level[0];
         levelDisplay.textContent = level;
         interval_speed = 2000;
-        displayTime = 2500;
+        displayTime = 1600;
     } else if (score >= 31 && score <= 60) {
         level = no_of_level[1];
         levelDisplay.textContent = level;
         interval_speed = 1500;
-        displayTime = 1500;
+        displayTime = 1100;
     } else if (score >= 61 && score <= 89) {
         level = no_of_level[2];
         levelDisplay.textContent = level;
@@ -264,7 +264,7 @@ function resartGame() {
     clearInterval(gameInterval);
     clearTimeout(displayTimeout);
     interval_speed = 2000;
-    displayTime = 2500;
+    displayTime = 1600;
     soundOn = false;
     soundToggleIcon.classList.contains("fa-volume-mute") ?
         soundToggleIcon.classList.replace("fa-volume-mute", "fa-volume-high") :
