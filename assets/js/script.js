@@ -28,7 +28,7 @@ const restartBtn = document.getElementById('restartBtn');
 const holes = document.getElementsByClassName("holes");
 const winnerScreen = document.getElementById("WinnerScreen");
 const gameOverScreen = document.getElementById("gameOverScreen");
-const soundBtn = document.getElementById("soundButton");
+
 
 scoreDisplay.textContent = score;
 levelDisplay.textContent = level;
@@ -230,7 +230,7 @@ function weakeningHealth() {
 }
 
 function displayGameOver() {
-    const gameOverScreen = document.getElementById("gameOverScreen");
+   
     gameOverScreen.style.display = "flex";
     setTimeout(function () {
         gameOverScreen.style.display = "none";
@@ -257,7 +257,7 @@ function resartGame() {
     startBtn.style.display = "inline-block";
     restartBtn.style.display = "none";
     levelDisplay.textContent = no_of_level[0];
-    health = max_health
+    health = max_health;
     healthDisplay.textContent = health;
     score = 0;
     scoreDisplay.textContent = score;
@@ -268,7 +268,7 @@ function resartGame() {
     soundOn = false;
     if (soundToggleIcon.classList.contains("fa-volume-high") )
         {
-            soundToggleIcon.classList.replace("fa-volume-high", "fa-volume-mute")
+            soundToggleIcon.classList.replace("fa-volume-high", "fa-volume-mute");
 
         }
     clearHoles();
