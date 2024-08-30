@@ -98,7 +98,7 @@ function startGame() {
 }
 
 function showLevelScreen(levelText, callback) {
-    winnerScreen.textContent = "Level:" + levelText;
+    winnerScreen.textContent = "Level: " + levelText;
     winnerScreen.style.display = "flex";
 
 
@@ -197,7 +197,7 @@ function incrementScore() {
         levelDisplay.textContent = level;
         interval_speed = 1500;
         displayTime = 1100;
-    } else if (score >= 61 && score <= 89) {
+    } else if (score >= 61 && score <= 99) {
         level = no_of_level[2];
         levelDisplay.textContent = level;
         interval_speed = 1000;
@@ -266,9 +266,11 @@ function resartGame() {
     interval_speed = 2000;
     displayTime = 1600;
     soundOn = false;
-    soundToggleIcon.classList.contains("fa-volume-mute") ?
-        soundToggleIcon.classList.replace("fa-volume-mute", "fa-volume-high") :
-        soundToggleIcon.classList.replace("fa-volume-high", "fa-volume-mute");
+    if (soundToggleIcon.classList.contains("fa-volume-high") )
+        {
+            soundToggleIcon.classList.replace("fa-volume-high", "fa-volume-mute")
+
+        }
     clearHoles();
     // Reset level screen flags
     level1Shown = false;

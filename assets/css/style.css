@@ -232,9 +232,13 @@ ol>li {
         height: 110vh;
 
     }
+    .button-placer {
+        
+        padding: 0.2rem;
+    }
     .game {
 
-        height: 52%;
+        height: 50vh;
     }
     
     .grid {
@@ -244,7 +248,7 @@ ol>li {
     }
     .holes .cat, .holes .dog{
         width : 60px;
-        height :50px;
+        height :40px;
        
         
     }
@@ -277,7 +281,7 @@ ol>li {
 @media screen and (min-width:461px) and (max-width:520px){
     #main {
 
-        height: 130vh;
+        height: 140vh;
 
     }
     h1 {
@@ -338,7 +342,7 @@ ol>li {
     }
     #main {
 
-        height: 160vh;
+        height: 170vh;
 
     }
     h1 {
@@ -390,8 +394,8 @@ ol>li {
 }
 @media screen and (min-width:641px) and (max-width:780px){
     .score-board {
-        padding: 5% 0;
-        height: 10vh;
+        padding: 2% 0;
+        height: 6vh;
     }
     .board {
         
@@ -399,7 +403,7 @@ ol>li {
     }
     #main {
 
-        height: 180vh;
+        height: 175vh;
 
     }
     h1 {
@@ -410,46 +414,145 @@ ol>li {
     }
     .game {
 
-        height: 56%;
+        height: 80vh;
     }
     
     .grid {
         
-        height: 80vh;
+        height: 90vh;
+     }
+    .holes {
+        width: 20%;
+        height: 18%;
+        margin: 3% 5% 0;
         
-    
-    
     }
     .holes .cat, .holes .dog{
         width : 90px;
-        height :70px;
+        height :50px;
        
         
     }
     .grid .holes .dog{
-        margin: 10px 5px 0;
+        margin: 5px 3px 0;
     }
     .grid .holes .cat{
-        margin: 10px 8px 0;
+        margin: 5px 6px 0;
     }
+    
     #startBtn,
     #restartBtn {
     
-        width: 25%;
-        padding: 3.2%;
+        width: 20%;
+        padding: 2%;
         font-size: 1.3rem;
+    }
+    .button-placer {
+        
+        padding: 0.2rem;
     }
     
     
     
     #soundToggleButton {
         width: 12%;
-        padding: 3.2%;
+        padding: 2%;
         font-size: 1.3rem;
     
     }
 }
-@media screen and (min-width:781px) and (max-width:900px){
+@media screen and (min-width:781px) and (max-width:800px){
+    .score-board {
+        padding: 1% 0;
+        height: 6vh;
+    }
+    h1{
+        font-size: 3.5vw;
+        padding: 10px;
+        margin-top: 10px;
+    }
+    #main {
+
+        height: 170vh;
+        margin-top: 4%;
+
+    }
+    .game {
+
+        height: 80vh;
+    }
+    
+    .grid {
+        
+        height: 90vh;
+     }
+    .holes {
+        width: 20%;
+        height: 18%;
+        margin: 3% 5% 0;
+        
+    }
+    .button-placer {
+        
+        padding: 0.4rem;
+    }
+    #instructions {
+        margin: 1% 20%;
+        padding: 0;
+ 
+    }
+    #instructions>h2 {
+        font-size: 2.2vw;
+        margin-top: 10px;
+  
+    }
+    
+    #instructions>p {
+        font-size: 1.9vw;
+       
+    
+    
+    }
+    
+    #instructions>ol {
+        font-size: 1.6vw;
+        
+    
+    }
+    #startBtn,
+    #restartBtn {
+    
+        width: 20%;
+        padding: 2%;
+        font-size: 1.2rem;
+    }
+    
+    
+    
+    #soundToggleButton {
+        width: 12%;
+        padding: 2%;
+        font-size: 1.2rem;
+    
+    }
+    .holes .cat, .holes .dog{
+        width : 100px;
+        height :70px;
+       
+        
+    }
+    .grid .holes .dog{
+        margin: -5px 7px 0;
+    }
+    .grid .holes .cat{
+        margin: -5px 9px 0;
+    }
+    .board {
+        font-weight: bolder;
+        font-size: 1.4rem;
+    }
+}
+@media screen and (min-width:801px) and (max-width:900px){
      .score-board {
         padding: 1% 0;
         height: 6vh;
@@ -467,7 +570,7 @@ ol>li {
     h1 {
         
         margin-top: 2%;
-        font-size: 2.6vw;
+        font-size: 3vw;
         padding: 1%;
         
     
@@ -479,7 +582,7 @@ ol>li {
     }
     #instructions>h2 {
         font-size: 2.2vw;
-        margin-top: 4px;
+        margin-top: 10px;
   
     }
     
@@ -558,7 +661,7 @@ ol>li {
         font-size: 1.2em;
     }
     #main {
-         height: 170vh;
+         height: 175vh;
          margin-top: 0;
 
     }
