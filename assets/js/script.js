@@ -51,7 +51,7 @@ soundToggleButton.addEventListener("click", toggleSound);
 //  play sound only if sound is enabled
 function playSoundEffect() {
     if (soundOn) {
-        gameSound.currentTime = 0; // Reset to the start for each play
+        gameSound.currentTime = 0.2; // Reset to the start for each play
         gameSound.play();
     } else {
         gameSound.pause();
