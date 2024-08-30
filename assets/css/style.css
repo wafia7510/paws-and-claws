@@ -11,7 +11,7 @@ body {
     width: 100%;
     flex-direction: column;
     align-items: center;
-    min-height: 100vh;
+    min-height: 70vh;
 
 }
 
@@ -392,14 +392,14 @@ ol>li {
     
     }
 }
-@media screen and (min-width:641px) and (max-width:780px){
+@media screen and (min-width:641px){
     .score-board {
         padding: 2% 0;
         height: 6vh;
     }
     .board {
         
-        font-size: 1.3em;
+        font-size: 1.5em;
     }
     #main {
 
@@ -419,7 +419,7 @@ ol>li {
     
     .grid {
         
-        height: 85vh;
+        height: 70vmax;
      }
     .holes {
         width: 20%;
@@ -434,10 +434,10 @@ ol>li {
         
     }
     .grid .holes .dog{
-        margin: 5px 6.5px 0;
+        margin: 15px 6.5px 0;
     }
     .grid .holes .cat{
-        margin: 0 7.5px 0;
+        margin: 15px 7.5px 0;
     }
     
     #startBtn,
@@ -571,7 +571,7 @@ ol>li {
         
         margin-top: 2%;
         font-size: 3vw;
-        padding: 1%;
+        padding: 3%;
         
     
     }
@@ -658,7 +658,7 @@ ol>li {
     }
     .board {
         
-        font-size: 1.2em;
+        font-size: 1.4em;
     }
     #main {
          height: 175vh;
@@ -718,16 +718,16 @@ ol>li {
     #restartBtn {
     
         width: 20%;
-        padding: 2%;
-        font-size: 1.3rem;
+        padding: 1%;
+        font-size: 1.4rem;
     }
     
     
     
     #soundToggleButton {
         width: 12%;
-        padding: 2%;
-        font-size: 1.3rem;
+        padding: 1%;
+        font-size: 1.4rem;
     
     }
 .holes .cat, .holes .dog{
@@ -807,14 +807,14 @@ ol>li {
     }
     .button-placer {
         
-        padding: 0.1rem;
+        padding: 0.5rem;
     }
     #startBtn,
     #restartBtn {
     
         width: 18%;
         padding: 2%;
-        font-size: 1.2rem;
+        font-size: 1.4rem;
     }
     
     
@@ -822,7 +822,7 @@ ol>li {
     #soundToggleButton {
         width: 12%;
         padding: 2%;
-        font-size: 1.2rem;
+        font-size: 1.4rem;
     
     }
 .holes .cat, .holes .dog{
@@ -873,9 +873,9 @@ ol>li {
 }
     #main {
         display: block;
-        margin: -4% 2% 3% 1%;
+        margin: -2% 2% 3% 1%;
         width: 98%;
-        height: 98vh;
+        height: 89vh;
         
     }
     #instructions {

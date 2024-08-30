@@ -51,7 +51,7 @@ soundToggleButton.addEventListener("click", toggleSound);
 //  play sound only if sound is enabled
 function playSoundEffect() {
     if (soundOn) {
-        gameSound.currentTime = 0.2; // Reset to the start for each play
+        gameSound.currentTime = 0.1; // Reset to the start for each play
         gameSound.play();
     } else {
         gameSound.pause();
@@ -167,20 +167,19 @@ function displayImages() {
 // Function to handle the click event when the cat image is clicked
 function whackCat() {
     let cat = document.querySelector(".cat");
-    cat.classList.add("disable");
-    incrementScore();
+    cat.classList.add("disable")
     playSoundEffect();
-
-
+    incrementScore(); 
 }
 
 // Function to handle the click event when the dog image is clicked
 function whackDog() {
     let dog = document.querySelector(".dog");
+    
     dog.classList.add("disable");
-    weakeningHealth();
     playSoundEffect();
-
+    weakeningHealth();
+    
 }
 
 function incrementScore() {
